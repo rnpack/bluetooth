@@ -141,7 +141,7 @@ function useBluetooth(props?: UseBluetoothProps): UseBluetoothReturnType {
 
   async function enableAndroidBluetooth() {
     try {
-      await bleManager?.enable();
+      await bleMgr?.enable();
       console.info('Android bluetooth enabled');
     } catch (error: unknown) {
       const err: Error = error as Error;
