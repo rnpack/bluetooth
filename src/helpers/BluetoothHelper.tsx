@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Alert, Platform } from 'react-native';
 import { State } from 'react-native-ble-plx';
+import type { BleManager } from 'react-native-ble-plx';
 import { Dialog } from 'react-native-design';
 import type { DialogProps } from 'react-native-design';
 import { openAppCustomSettings } from '@rnpack/utils';
@@ -10,6 +11,7 @@ import { useBluetooth, useBluetoothListener } from '../hooks';
 import type { RequestAndroidBluetoothAuthorizationReturns } from './../hooks';
 
 interface BluetoothHelperProps {
+  bleManager?: BleManager;
   onBluetoothOff?: () => void;
   onPressAcceptBluetoothAuthorization?: () => void;
   onPressRejectBluetoothAuthorization?: () => void;
@@ -36,9 +38,10 @@ function BluetoothHelper(props: BluetoothHelperProps) {
     getBluetoothAdapterState,
     requestAndroidBluetoothAuthorization,
     checkAndroidBluetoothAuthorization,
-  } = useBluetooth();
+  } = useBluetooth({ bleManager: props?.bleManager });
   const { startBluetoothAdapterStateListener } = useBluetoothListener({
     onBluetoothAdapterStateChange,
+    bleManager: props?.bleManager,
   });
 
   const bluetoothPermissionCheckTimeInterval = useRef<NodeJS.Timeout>();

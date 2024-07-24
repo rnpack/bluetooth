@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react';
-import { BleManagerContext } from './BleManagerContext';
-import { useBleManager } from './../../hooks';
+
+import { BleManagerContext } from './context';
+import { useBleManager } from '../../hooks';
 
 const { Provider } = BleManagerContext;
 

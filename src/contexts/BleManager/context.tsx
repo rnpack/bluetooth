@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+
 import type { BleManagerContextType } from '../../types';
 
 const defaultBleManagerContextValue: BleManagerContextType = {

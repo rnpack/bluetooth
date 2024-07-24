@@ -1,1 +1,1 @@
-export * from './bleManager';
+export * from './BleManager';

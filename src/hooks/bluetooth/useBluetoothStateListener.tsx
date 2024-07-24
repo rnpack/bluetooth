@@ -1,9 +1,8 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { State } from 'react-native-ble-plx';
-import type { Subscription } from 'react-native-ble-plx';
+import type { BleManager, Subscription } from 'react-native-ble-plx';
 
-import { BleManagerContext } from '../../contexts';
-import type { BleManagerContextType } from '../../types';
+import { useBleManagerContext } from '../ble';
 
 interface StartBluetoothAdapterStateListenerArgs {
   emitCurrentState?: boolean;
@@ -18,12 +17,15 @@ interface UseBluetoothListenerReturnType {
 
 interface UseBluetoothListenerProps {
   onBluetoothAdapterStateChange?: (state: State) => void;
+  bleManager?: BleManager;
 }
 
 function useBluetoothListener(
   props?: UseBluetoothListenerProps
 ): UseBluetoothListenerReturnType {
-  const { bleManager } = useContext<BleManagerContextType>(BleManagerContext);
+  const { bleManager } = useBleManagerContext();
+
+  const bleMgr: BleManager = (props?.bleManager ?? bleManager) as BleManager;
 
   const bluetoothAdapterStateListener = useRef<Subscription>();
 
@@ -65,7 +67,7 @@ function useBluetoothListener(
   function startBluetoothAdapterStateListener(
     args?: StartBluetoothAdapterStateListenerArgs
   ): void {
-    bluetoothAdapterStateListener.current = bleManager?.onStateChange(
+    bluetoothAdapterStateListener.current = bleMgr?.onStateChange(
       onBluetoothAdapterStateChange,
       args?.emitCurrentState ?? false
     );

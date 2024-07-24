@@ -1,10 +1,6 @@
-import { useContext } from 'react';
 import { Platform } from 'react-native';
 import type { PermissionStatus } from 'react-native';
 import type { BleManager, State } from 'react-native-ble-plx';
-
-import type { BleManagerContextType } from '../../types';
-import { BleManagerContext } from '../../contexts';
 import {
   hasAndroidBluetoothConnectAuthorized,
   hasAndroidBluetoothScanAuthorized,
@@ -13,6 +9,8 @@ import {
   requestAndroidBluetoothConnectAuthorization,
   requestAndroidBluetoothScanAuthorization,
 } from '@rnpack/utils';
+
+import { useBleManagerContext } from '../ble';
 
 interface RequestAndroidBluetoothAuthorizationReturns {
   scanPermissionStatus: PermissionStatus;
@@ -27,10 +25,14 @@ interface UseBluetoothReturnType {
   checkAndroidBluetoothAuthorization: () => Promise<boolean>;
 }
 
-function useBluetooth(): UseBluetoothReturnType {
-  const { bleManager } = useContext<BleManagerContextType>(BleManagerContext);
+interface UseBluetoothProps {
+  bleManager?: BleManager;
+}
 
-  const bleMgr: BleManager = bleManager as BleManager;
+function useBluetooth(props?: UseBluetoothProps): UseBluetoothReturnType {
+  const { bleManager } = useBleManagerContext();
+
+  const bleMgr: BleManager = (props?.bleManager ?? bleManager) as BleManager;
 
   async function checkAndroidBluetoothAuthorization(): Promise<boolean> {
     if (Platform?.OS !== 'android') {
