@@ -51,6 +51,11 @@ function BluetoothHelper(props: BluetoothHelperProps) {
 
   useEffect(() => {
     mount();
+
+    return () => {
+      unmount();
+    };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -65,11 +70,11 @@ function BluetoothHelper(props: BluetoothHelperProps) {
     }
 
     if (!isAuthorized) {
-      startBluetoothPermissionListener();
+      // startBluetoothPermissionListener();
     }
 
     if (isAuthorized) {
-      stopBluetoothPermissionListener();
+      // stopBluetoothPermissionListener();
     }
 
     props?.onBluetoothAuthorizationChange?.(isAuthorized);
@@ -83,11 +88,16 @@ function BluetoothHelper(props: BluetoothHelperProps) {
       await androidInit();
     }
 
+    startBluetoothPermissionListener();
     startBluetoothAdapterStateListener();
 
     const state: State = await getBluetoothAdapterState();
 
     onBluetoothAdapterStateChange(state);
+  }
+
+  function unmount() {
+    stopBluetoothPermissionListener();
   }
 
   function startBluetoothPermissionListener() {
