@@ -166,6 +166,10 @@ function BluetoothHelper(props: BluetoothHelperProps) {
 
       case 'PoweredOn':
         setIsEnabled(true);
+
+        if (Platform?.OS === 'ios') {
+          setIsAuthorized(true);
+        }
         break;
 
       default:
