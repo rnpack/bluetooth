@@ -86,10 +86,8 @@ function BluetoothHelper(props: BluetoothHelperProps) {
   async function mount() {
     if (Platform?.OS === 'android') {
       await androidInit();
-      await isAuthorizedAndroidBluetooth();
     }
 
-    startBluetoothPermissionListener();
     startBluetoothAdapterStateListener();
 
     const state: State = await getBluetoothAdapterState();
@@ -101,23 +99,19 @@ function BluetoothHelper(props: BluetoothHelperProps) {
     stopBluetoothPermissionListener();
   }
 
-  function startBluetoothPermissionListener() {
-    if (Platform?.OS === 'android') {
-      console.info('Start android bluetooth permission listener...');
-      bluetoothPermissionCheckTimeInterval.current = setInterval(async () => {
-        await isAuthorizedAndroidBluetooth();
-      }, 3000);
-    }
+  function startAndroidBluetoothPermissionListener() {
+    console.info('Start android bluetooth permission listener...');
+    bluetoothPermissionCheckTimeInterval.current = setInterval(async () => {
+      await isAndroidBluetoothAuthorized();
+    }, 3000);
   }
 
-  async function isAuthorizedAndroidBluetooth() {
-    if (Platform?.OS === 'android') {
-      const isGranted = await checkAndroidBluetoothAuthorization();
-      if (isGranted) {
-        setIsAuthorized(true);
-      } else {
-        setIsAuthorized(false);
-      }
+  async function isAndroidBluetoothAuthorized() {
+    const isGranted = await checkAndroidBluetoothAuthorization();
+    if (isGranted) {
+      setIsAuthorized(true);
+    } else {
+      setIsAuthorized(false);
     }
   }
 
@@ -142,6 +136,10 @@ function BluetoothHelper(props: BluetoothHelperProps) {
         setIsAuthorized(false);
       }
     }
+
+    await isAndroidBluetoothAuthorized();
+
+    startAndroidBluetoothPermissionListener();
   }
 
   function onBluetoothAdapterStateChange(state: State) {
