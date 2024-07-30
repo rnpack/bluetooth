@@ -123,6 +123,8 @@ function BluetoothHelper(props: BluetoothHelperProps) {
   }
 
   async function androidInit() {
+    startAndroidBluetoothPermissionListener();
+
     const isPermission: boolean = await checkAndroidBluetoothAuthorization();
 
     if (!isPermission) {
@@ -138,8 +140,6 @@ function BluetoothHelper(props: BluetoothHelperProps) {
     }
 
     await isAndroidBluetoothAuthorized();
-
-    startAndroidBluetoothPermissionListener();
   }
 
   function onBluetoothAdapterStateChange(state: State) {
