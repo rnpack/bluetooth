@@ -84,15 +84,15 @@ function BluetoothHelper(props: BluetoothHelperProps) {
   }, [isEnabled, isAuthorized]);
 
   async function mount() {
-    if (Platform?.OS === 'android') {
-      await androidInit();
-    }
-
     startBluetoothAdapterStateListener();
 
     const state: State = await getBluetoothAdapterState();
 
     onBluetoothAdapterStateChange(state);
+
+    if (Platform?.OS === 'android') {
+      await androidInit();
+    }
   }
 
   function unmount() {
