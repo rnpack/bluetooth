@@ -1,0 +1,24 @@
+{
+  "cxxNamespace": [
+    "RNPackBluetooth"
+  ],
+  "ios": {
+    "iosModuleName": "RNPackBluetooth"
+  },
+  "android": {
+    "androidNamespace": [
+      "RNPackBluetooth"
+    ],
+    "androidCxxLibName": "RNPackBluetooth"
+  },
+  "autolinking": {
+    "RNPackBluetooth": {
+      "swift": "RNPackBluetooth",
+      "kotlin": "RNPackBluetooth"
+    }
+  },
+  "ignorePaths": [
+    "node_modules",
+    "example/node_modules"
+  ]
+}

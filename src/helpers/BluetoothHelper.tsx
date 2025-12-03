@@ -44,7 +44,8 @@ function BluetoothHelper(props: BluetoothHelperProps) {
     bleManager: props?.bleManager,
   });
 
-  const bluetoothPermissionCheckTimeInterval = useRef<NodeJS.Timeout>();
+  const bluetoothPermissionCheckTimeInterval =
+    useRef<NodeJS.Timeout>(undefined);
 
   const [isAuthorized, setIsAuthorized] = useState<boolean>(true);
   const [isEnabled, setIsEnabled] = useState<boolean>(true);

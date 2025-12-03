@@ -4,24 +4,35 @@ Bluetooth permissions and adapter state
 
 ## Installation
 
+
 ```sh
-npm install @rnpack/bluetooth
+npm install @rnpack/bluetooth react-native-nitro-modules
+
+> `react-native-nitro-modules` is required as this library relies on [Nitro Modules](https://nitro.margelo.com/).
 ```
+
 
 ## Usage
 
-```js
-import {} from '@rnpack/bluetooth';
 
+```js
+import { multiply } from '@rnpack/bluetooth';
+
+// ...
+
+const result = multiply(3, 7);
 ```
+
 
 ## Contributing
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+- [Development workflow](CONTRIBUTING.md#development-workflow)
+- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
+- [Code of conduct](CODE_OF_CONDUCT.md)
 
 ## License
 
-The MIT License.
+MIT
 
 ## Author
 
@@ -45,3 +56,4 @@ Thank you to all our sponsors! [Become a sponsor](https://opencollective.com/rnp
 <a href="https://opencollective.com/rnpack#sponsors" target="_blank"><img src="https://opencollective.com/rnpack/sponsors.svg?width=890" alt="@react-native-ui-design/dialog"></a>
 
 ---
+

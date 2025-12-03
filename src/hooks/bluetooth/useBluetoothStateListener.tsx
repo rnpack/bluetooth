@@ -27,7 +27,7 @@ function useBluetoothListener(
 
   const bleMgr: BleManager = (props?.bleManager ?? bleManager) as BleManager;
 
-  const bluetoothAdapterStateListener = useRef<Subscription>();
+  const bluetoothAdapterStateListener = useRef<Subscription>(null);
 
   useEffect(() => {
     return () => {

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "BluetoothExample.app"
-               BlueprintName = "BluetoothExample"
-               ReferencedContainer = "container:BluetoothExample.xcodeproj">
+               BuildableName = "RNPackBluetoothExample.app"
+               BlueprintName = "RNPackBluetoothExample"
+               ReferencedContainer = "container:RNPackBluetoothExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "BluetoothExampleTests.xctest"
-               BlueprintName = "BluetoothExampleTests"
-               ReferencedContainer = "container:BluetoothExample.xcodeproj">
+               BuildableName = "RNPackBluetoothExampleTests.xctest"
+               BlueprintName = "RNPackBluetoothExampleTests"
+               ReferencedContainer = "container:RNPackBluetoothExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BluetoothExample.app"
-            BlueprintName = "BluetoothExample"
-            ReferencedContainer = "container:BluetoothExample.xcodeproj">
+            BuildableName = "RNPackBluetoothExample.app"
+            BlueprintName = "RNPackBluetoothExample"
+            ReferencedContainer = "container:RNPackBluetoothExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BluetoothExample.app"
-            BlueprintName = "BluetoothExample"
-            ReferencedContainer = "container:BluetoothExample.xcodeproj">
+            BuildableName = "RNPackBluetoothExample.app"
+            BlueprintName = "RNPackBluetoothExample"
+            ReferencedContainer = "container:RNPackBluetoothExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
