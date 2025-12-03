@@ -1,6 +1,6 @@
 {
   "name": "@rnpack/bluetooth",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Bluetooth permissions and adapter state",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
