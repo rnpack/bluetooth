@@ -22,7 +22,7 @@ def reactNativeArchitectures() {
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
-apply from: '../nitrogen/generated/android/RNPackBluetooth+autolinking.gradle'
+apply from: '../nitrogen/generated/android/rnpackbluetooth+autolinking.gradle'
 
 apply plugin: "com.facebook.react"
 
@@ -31,7 +31,7 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
-  namespace "com.margelo.nitro.RNPackBluetooth"
+  namespace "com.margelo.nitro.rnpackbluetooth"
 
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
 

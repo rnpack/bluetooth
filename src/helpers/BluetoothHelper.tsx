@@ -1,14 +1,16 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
 import { Alert, Platform } from 'react-native';
 import { State } from 'react-native-ble-plx';
-import type { BleManager } from 'react-native-ble-plx';
 import { Dialog } from 'react-native-design';
-import type { DialogProps } from 'react-native-design';
 import { openAppCustomSettings } from '@rnpack/utils';
 
-import { useBluetooth, useBluetoothListener } from '../hooks';
-import type { RequestAndroidBluetoothAuthorizationReturns } from './../hooks';
+import type { ReactNode } from 'react';
+import type { BleManager } from 'react-native-ble-plx';
+import type { DialogProps } from 'react-native-design';
+
+import { useBluetooth, useBluetoothListener } from '@rnpack/bluetooth';
+
+import type { RequestAndroidBluetoothAuthorizationReturns } from '@rnpack/bluetooth';
 
 interface BluetoothHelperProps {
   bleManager?: BleManager;

@@ -1,15 +1,15 @@
 {
   "cxxNamespace": [
-    "RNPackBluetooth"
+    "rnpackbluetooth"
   ],
   "ios": {
     "iosModuleName": "RNPackBluetooth"
   },
   "android": {
     "androidNamespace": [
-      "RNPackBluetooth"
+      "rnpackbluetooth"
     ],
-    "androidCxxLibName": "RNPackBluetooth"
+    "androidCxxLibName": "rnpackbluetooth"
   },
   "autolinking": {
     "RNPackBluetooth": {

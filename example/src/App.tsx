@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { Text } from 'react-native-design';
-
-import { multiply, BleManagerProvider, BluetoothHelper } from '../../src';
 import {
   openAndroidBluetoothSettings,
   openIOSBluetoothSettings,
 } from '@rnpack/utils';
+
+import {
+  multiply,
+  BleManagerProvider,
+  BluetoothHelper,
+} from '@rnpack/bluetooth';
 
 const result = multiply(3, 7);
 

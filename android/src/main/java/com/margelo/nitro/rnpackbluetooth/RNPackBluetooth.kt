@@ -1,4 +1,4 @@
-package com.margelo.nitro.RNPackBluetooth
+package com.margelo.nitro.rnpackbluetooth
   
 import com.facebook.proguard.annotations.DoNotStrip
 

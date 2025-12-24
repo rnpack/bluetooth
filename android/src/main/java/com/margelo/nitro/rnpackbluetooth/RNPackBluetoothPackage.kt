@@ -1,11 +1,11 @@
-package com.margelo.nitro.RNPackBluetooth
+package com.margelo.nitro.rnpackbluetooth
 
 import com.facebook.react.BaseReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.model.ReactModuleInfoProvider
 
-class HybridRNPackBluetoothPackage : BaseReactPackage() {
+class RNPackBluetoothPackage : BaseReactPackage() {
     override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
         return null
     }
@@ -16,7 +16,7 @@ class HybridRNPackBluetoothPackage : BaseReactPackage() {
 
     companion object {
         init {
-            System.loadLibrary("RNPackBluetooth")
+            System.loadLibrary("rnpackbluetooth")
         }
     }
 }

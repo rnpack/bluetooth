@@ -1,4 +1,4 @@
-package rnpack.bluetooth.example
+package rnpackbluetooth.example
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
